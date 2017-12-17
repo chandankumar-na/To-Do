@@ -139,12 +139,23 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-  select(event, id) {
-    console.log(id+":"+event.srcElement.checked)
+  private select(event, id) {
+    // console.log(id + ":" + event.srcElement.checked)
     if (event.srcElement.checked) {
       this.selected_items.push(id)
+      // console.log(this.selected_items)
     } else {
-      this.selected_items.splice(id, 1);
+
+      var index = this.selected_items.findIndex(function (o) {
+        return o == id;
+      })
+      if (index !== -1) {
+        console.log(index)
+        this.selected_items.splice(index, 1);
+        
+      };
+      
     }
+    console.log(this.selected_items)
   }
 }

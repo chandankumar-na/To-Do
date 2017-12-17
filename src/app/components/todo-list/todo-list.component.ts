@@ -202,12 +202,17 @@ export class TodoListComponent implements OnInit {
     if (event.srcElement.checked) {
       this.selected_items.push(id)
     } else {
-      this.selected_items.splice(id, 1);
+
+      var index = this.selected_items.findIndex(function (o) {
+        return o == id;
+      })
+      if (index !== -1) {
+        console.log(index)
+        this.selected_items.splice(index, 1);
+      };
+     
     }
   }
-
-
-
   private updateDate(id, date) {
     console.log("updateDate" + id + date)
     var dt = Date.parse((date.toString()))

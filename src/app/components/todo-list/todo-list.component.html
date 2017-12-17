@@ -49,12 +49,12 @@
           <input [(ngModel)]="name" name="name" id="cust_name1"type="text" class="  search-query form-control"
             placeholder="Add item" />
           <span class="input-group-btn">
-              <button type="button" style="background-color: #dddddd;" class="btn btn-default" type="button">
+              <button type="button"style="background-color: #dddddd;" class="btn btn-default" type="button">
                 <span class="fa fa-calendar"><input name="date_pick" id="date_pick" type="date" [(ngModel)]="date_pick" ></span>
               </button>
             </span>
             <span class="input-group-btn">
-                <button (click)="addToDo()" type="submit" class="btn btn-add" type="button">
+                <button [disabled]="name==null || name==''|| date_pick==null" (click)="addToDo()" type="submit" class="btn btn-add" type="button">
                   <span class=" glyphicon glyphicon-plus"></span>
                 </button>
               </span>
@@ -62,8 +62,8 @@
       </div>
 
       <div class="col col-md-4 col-sm-4">
-        <button class="btn btn-md btn-primary" (click)="fetchToDoList()" data-toggle="modal" data-target="#myModal">Move </button>
-        <button class="btn btn-md btn-danger" (click)="deleteSelectedItems()">Delete </button>
+        <button [disabled]="selected_items.length<=0" class="btn btn-md btn-primary" (click)="fetchToDoList()" data-toggle="modal" data-target="#myModal">Move </button>
+        <button [disabled]="selected_items.length<=0" class="btn btn-md btn-danger" (click)="deleteSelectedItems()">Delete </button>
       </div>
     </div>
 

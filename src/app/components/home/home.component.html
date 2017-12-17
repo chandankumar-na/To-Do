@@ -46,14 +46,14 @@
       <div class="input-group col-md-6 col-sm-6">
        <form (ngSubmit)="addToDo()"> <input [(ngModel)]="name" name="name"type="text" style="width:90%;margin-left: 3%;" class="  search-query form-control" placeholder="Add list" />
         <span class="input-group-btn">
-          <button (click)="addToDo()"type="submit" class="btn btn-add" type="button">
+          <button [disabled]="name==null || name==''" (click)="addToDo()"type="submit" class="btn btn-add" type="button">
             <span class=" glyphicon glyphicon-plus"></span>
           </button>
         </span>
       </form> 
       </div>
       <div class="col col-md-4 col-sm-6">
-        <button class="btn btn-md btn-danger" (click)="deleteSelectedItems()">DELETE SELECTED</button>
+        <button [disabled]="selected_items.length<=0" class="btn btn-md btn-danger" (click)="deleteSelectedItems()">DELETE SELECTED</button>
       </div>
     </div>
   </div>
