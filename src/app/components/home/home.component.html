@@ -18,7 +18,7 @@
               <div class="row">
                 <div id="custom-search-input1">
 
-                  <div id="seach-in" class="input-group col-md-6">
+                  <div id="seach-in" class="input-group col-md-6 col-sm-6">
                     <input [(ngModel)]="query" (keyup)="filter()" type="text" class="  search-query form-control" placeholder="Search" />
                     <span class="input-group-btn">
                       <button class="btn btn-primary" type="button">
@@ -43,7 +43,7 @@
 
     <div class="row">
       <div class="col col-md-2"></div>
-      <div class="input-group col-md-6">
+      <div class="input-group col-md-6 col-sm-6">
        <form (ngSubmit)="addToDo()"> <input [(ngModel)]="name" name="name"type="text" style="width:90%;margin-left: 3%;" class="  search-query form-control" placeholder="Add list" />
         <span class="input-group-btn">
           <button (click)="addToDo()"type="submit" class="btn btn-add" type="button">
@@ -52,7 +52,7 @@
         </span>
       </form> 
       </div>
-      <div class="col col-md-4">
+      <div class="col col-md-4 col-sm-6">
         <button class="btn btn-md btn-danger" (click)="deleteSelectedItems()">DELETE SELECTED</button>
       </div>
     </div>
@@ -63,9 +63,9 @@
 <div class="main" style="margin-top:2%;">
     <div class="container content">
       <div class="row">
-        <div class="col col-md-2">
+        <div class="col col-md-2 col-sm-0">
         </div>
-        <div class="col col-md-8">
+        <div class="col col-md-8 col-sm-12 ">
   
           <div id="panel-group">
             <div style="margin-bottom: 8px;" class="panel panel-default" *ngFor="let item of searchRes;let i=index;">
@@ -91,7 +91,7 @@
           </div>
   
         </div>
-        <div class="col col-md-2">
+        <div class="col col-md-2 col-sm-0">
         </div>
       </div>
     </div>

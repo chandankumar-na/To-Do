@@ -7,7 +7,7 @@ import { ToDoList } from './../interfaces/toDoList';
 @Injectable()
 export class AppService {
   // baseURL = 'http://localhost:3000';
-  baseURL = "https://ckrtodo.herokuapp.com/";
+  baseURL = "https://ckrtodo.herokuapp.com";
   public newSubject = new Subject<any>();
   authorized: boolean;
   constructor(private http: Http) { }

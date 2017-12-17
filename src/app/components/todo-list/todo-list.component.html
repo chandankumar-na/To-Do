@@ -18,7 +18,7 @@
               <div class="row">
                 <div id="custom-search-input1">
 
-                  <div id="seach-in" class="input-group col-md-6">
+                  <div id="seach-in" class="input-group col-md-6 col-sm-12">
                     <input [(ngModel)]="query" (keyup)="filter()" type="text" class="search-query form-control" placeholder="Search" />
                     <span class="input-group-btn">
                       <button class="btn btn-primary" type="button">
@@ -44,7 +44,7 @@
 
     <div class="row">
       <div class="col col-md-2"></div>
-      <div class="input-group col-md-6">
+      <div class="input-group col-md-6 col-sm-6">
         <form (ngSubmit)="addToDo()">
           <input [(ngModel)]="name" name="name" id="cust_name1"type="text" class="  search-query form-control"
             placeholder="Add item" />
@@ -61,7 +61,7 @@
         </form>
       </div>
 
-      <div class="col col-md-4">
+      <div class="col col-md-4 col-sm-4">
         <button class="btn btn-md btn-primary" (click)="fetchToDoList()" data-toggle="modal" data-target="#myModal">Move </button>
         <button class="btn btn-md btn-danger" (click)="deleteSelectedItems()">Delete </button>
       </div>
@@ -76,9 +76,9 @@
 <div class="main" style="margin-top:2%;">
   <div class="container content">
     <div class="row">
-      <div class="col col-md-2">
+      <div class="col col-md-2" >
       </div>
-      <div class="col col-md-8">
+      <div class="col col-md-8 col-sm-12">
 
         <div  *ngFor="let item of searchRes;let i=index;" id="panel-group">
           <input type="hidden" value="{{item.date | date: 'dd'}}" #d1>
@@ -102,7 +102,7 @@
           </div>
         </div>
 
-         <div class="row "><div class="col-md-10"><hr id="hr1" noshade/></div><div class="col col-md-2"><p style="color: green;">About to expire</p></div></div>
+         <div class="row "><div class="col-md-10 col-sm-10"><hr id="hr1" noshade/></div><div class="col col-md-2 col-sm-2"><p style="color: green;">About to expire</p></div></div>
 
         <div  *ngFor="let item of searchRes;let i=index;" id="panel-group">
             <input type="hidden" value="{{item.date | date: 'dd'}}" #d2>
@@ -125,7 +125,7 @@
               </div>
             </div>
           </div>
-          <div class="row "><div class="col-md-10"><hr id="hr2" noshade/></div><div class="col col-md-2"><p style="color:#ce5d5d;">Expired</p></div></div>
+          <div class="row "><div class="col-md-10 col-sm-10"><hr id="hr2" noshade/></div><div class="col col-md-2 col-sm-2"><p style="color:#ce5d5d;">Expired</p></div></div>
           
 
           <div  *ngFor="let item of searchRes;let i=index;" id="panel-group">
@@ -149,9 +149,6 @@
                 </div>
               </div>
             </div>
-
-
-            
 
         </div>
         <div class="col col-md-2"></div>
