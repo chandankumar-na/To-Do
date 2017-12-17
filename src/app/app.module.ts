@@ -9,21 +9,6 @@ import {AppService} from './services/app.service';
 import {HttpModule} from '@angular/http';
 import { HomeComponent } from './components/home/home.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { NguiDatetimePickerModule, NguiDatetime } from '@ngui/datetime-picker';
-
-// Override Date object formatter
-NguiDatetime.formatDate = (date: Date) : string => {
-    //..... my own function that returns a string ....
-    return date.toDateString();
-};
-
-
-// Override Date object parser
-NguiDatetime.parseDate = (str: any): Date => {
-
-  return new Date();
-}
-    
 import { AuthGuard } from './auth-guard';
 // import { AsyncLocalStorageModule } from 'angular-async-local-storage';
 @NgModule({
@@ -39,7 +24,6 @@ import { AuthGuard } from './auth-guard';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NguiDatetimePickerModule ,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [AppService,AuthGuard],
