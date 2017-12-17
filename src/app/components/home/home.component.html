@@ -1,0 +1,131 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="/">Todo</a>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a style="margin-top: 5px;" class="nav-link" routerLink="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="main">
+            <div id="m_seach" class="container content">
+              <div class="row">
+                <div id="custom-search-input1">
+
+                  <div id="seach-in" class="input-group col-md-6">
+                    <input [(ngModel)]="query" (keyup)="filter()" type="text" class="  search-query form-control" placeholder="Search" />
+                    <span class="input-group-btn">
+                      <button class="btn btn-primary" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div></div>
+
+<div class="main" style="margin-top:2%;">
+  <div class="container content">
+
+    <div class="row">
+      <div class="col col-md-2"></div>
+      <div class="input-group col-md-6">
+       <form (ngSubmit)="addToDo()"> <input [(ngModel)]="name" name="name"type="text" style="width:90%;margin-left: 3%;" class="  search-query form-control" placeholder="Add list" />
+        <span class="input-group-btn">
+          <button (click)="addToDo()"type="submit" class="btn btn-add" type="button">
+            <span class=" glyphicon glyphicon-plus"></span>
+          </button>
+        </span>
+      </form> 
+      </div>
+      <div class="col col-md-4">
+        <button class="btn btn-md btn-danger" (click)="deleteSelectedItems()">DELETE SELECTED</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="main" style="margin-top:2%;">
+    <div class="container content">
+      <div class="row">
+        <div class="col col-md-2">
+        </div>
+        <div class="col col-md-8">
+  
+          <div id="panel-group">
+            <div style="margin-bottom: 8px;" class="panel panel-default" *ngFor="let item of searchRes;let i=index;">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <!-- <i class='glyphicon' 
+                          [class.glyphicon-chevron-right] = "i != current"
+                          [class.glyphicon-chevron-down] = "i == current" ></i> -->
+                  <b>
+                    <input title="click here to edit" (blur)="update(item.todo_id,item.name)" id="list_name" [(ngModel)]="item.name"
+                      type="text">
+                  </b>
+                  <span id="date_time1" (click)="addItems(item.todo_id,item.name);" title="click here to add task"> list created on
+                    <b >{{item.date | date: 'dd'}}/{{item.date | date:'MM'}}/{{item.date | date: 'yyyy'}}</b>
+                  </span>
+                  <span>
+                    <input id="check1" (click)="select($event,item.todo_id)" class="form-check-input" type="checkbox">
+                  </span>
+                  <i (click)="delete(i,item.todo_id)" id="delete" class="fa fa-trash-o" aria-hidden="true"></i>
+                </h5>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+        <div class="col col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<!-- <div class="main" style="margin-top:2%;">
+  <div class="container content">
+    <div class="row">
+      <div class="col col-md-2">
+      </div>
+      <div class="col col-md-8">
+        <ul *ngFor="let item of searchRes;let i=index;" class="list-group">
+          <button id="cust_btn">
+            <li id="custom_li" class="list-group-item list-group-item-info">
+              <span>
+               <b><input id="check1" (click)="select($event,item.todo_id)" class="form-check-input" type="checkbox">
+               </b> </span>
+              <span>
+                <input title="click here to edit" (blur)="update(item.todo_id,item.name)" id="list_name" [(ngModel)]="item.name" type="text">
+              </span>
+              <span (click)="addItems(item.todo_id,item.name);" title="click here to add task"> list created on
+                <b>{{item.date | date: 'dd'}}/{{item.date | date:'MM'}}/{{item.date | date: 'yyyy'}}</b>
+              </span>
+              <i (click)="delete(i,item.todo_id)" id="delete" class="fa fa-trash-o" aria-hidden="true"></i>
+            </li>
+          </button>
+        </ul>
+      </div>
+      <div class="col col-md-2">
+      </div>
+    </div>
+
+
+  </div>
+</div> -->
