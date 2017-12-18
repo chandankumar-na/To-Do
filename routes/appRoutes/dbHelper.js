@@ -1,8 +1,6 @@
 
 var ToDoDetailsSchema = require('../../models/ToDoDetailsSchema');
 var request = require('request');
-var to_json = require('xmljson').to_json;
-var localStorage=require('localStorage');
 var request_url = require("../../configFiles/dbConfig");
 var self = module.exports = {
 

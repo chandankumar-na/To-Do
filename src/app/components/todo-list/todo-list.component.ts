@@ -169,7 +169,7 @@ export class TodoListComponent implements OnInit {
       this.searchRes = this.mainList;
     } else
     this.searchRes = this.mainList.filter((task) =>
-    task.name.indexOf(this.query) >= 0 ||task.date.indexOf(this.query) >= 0);
+    task.name.indexOf(this.query) >= 0 || task.date.indexOf(this.query) >= 0);
   }
 
 

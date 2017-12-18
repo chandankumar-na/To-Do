@@ -4,10 +4,6 @@ var app = express();
 var path = require('path');
 var dbHelper = require("./dbHelper.js");
 
-
-
-
-//get all Invoices
 appRouter.route('/fetchToDo').post(function (req, res) {
     console.log("/fetchToDo")
     dbHelper.fetchToDo(req, function (result) {
@@ -16,7 +12,6 @@ appRouter.route('/fetchToDo').post(function (req, res) {
 });
 
 
-//update single Invoice
 appRouter.route('/deleteToDo').post(function (req, res) {
     console.log("/deleteToDo")
     dbHelper.deleteToDo(req, function (result) {
@@ -25,7 +20,6 @@ appRouter.route('/deleteToDo').post(function (req, res) {
 });
 
 
-//update single Invoice
 appRouter.route('/updateToDo').post(function (req, res) {
     console.log("/updateToDo")
     dbHelper.updateToDo(req, function (result) {
@@ -50,7 +44,6 @@ appRouter.route('/updateDate').post(function (req, res) {
 });
 
 
-//add single Invoice =>this is to add data throw postman==>testing purpose
 appRouter.route('/addToDo').post(function (req, res) {
     console.log("/addToDo")
     dbHelper.addToDo(req, function (result) {
