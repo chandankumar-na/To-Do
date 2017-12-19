@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
           b = new Date(b.date);
           return a>b ? -1 : a<b ? 1 : 0;
       });
+      
       this.mainList.sort(function(a, b) {
         a = new Date(a.date);
         b = new Date(b.date);
@@ -54,7 +55,7 @@ export class HomeComponent implements OnInit {
     console.log("addToDo()"+this.name)
 
     var toDo = new ToDoList();
-    toDo.date = new Date();
+    toDo.date = new Date().toDateString();
     toDo.name = this.name;
     toDo.todo_task = "todo"
     var today = Number(new Date())
@@ -111,9 +112,9 @@ export class HomeComponent implements OnInit {
     if (this.query == "" || this.query == null) {
       this.searchRes = this.mainList;
     } else
-    
       this.searchRes = this.mainList.filter((task) =>
-       task.name.indexOf(this.query) >= 0 ||task.date.indexOf(this.query) >= 0);
+       task.name.toLowerCase().indexOf(this.query.toLowerCase()) >= 0 ||
+       task.date.indexOf(this.query) >= 0);
   }
 
 

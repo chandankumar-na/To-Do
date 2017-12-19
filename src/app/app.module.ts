@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './components/app.component';
 import {APP_ROUTES} from './app.routing';
 import {AppService} from './services/app.service';
+import {dateFormatPipe} from './pipes/date.pipe';
+import { DatePipe } from '@angular/common';
 import {HttpModule} from '@angular/http';
 import { HomeComponent } from './components/home/home.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
@@ -16,6 +18,7 @@ import { AuthGuard } from './auth-guard';
     AppComponent,
     HomeComponent,
     TodoListComponent,
+    dateFormatPipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { AuthGuard } from './auth-guard';
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [AppService,AuthGuard],
+  providers: [AppService,AuthGuard,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

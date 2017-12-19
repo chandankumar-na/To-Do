@@ -42,6 +42,12 @@ appRouter.route('/updateDate').post(function (req, res) {
         res.json({ result: result });
     })
 });
+appRouter.route('/updateTime').post(function (req, res) {
+    console.log("/updateTime")
+    dbHelper.updateTime(req, function (result) {
+        res.json({ result: result });
+    })
+});
 
 
 appRouter.route('/addToDo').post(function (req, res) {

@@ -57,6 +57,12 @@ export class AppService {
     return this.http.post(`${this.baseURL}/api/updateDate`, body, { headers: headers })
       .map((response: Response) => response.json());
   }
+  updateTime(details:ToDoList) {
+    const body = JSON.stringify(details);
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http.post(`${this.baseURL}/api/updateTime`, body, { headers: headers })
+      .map((response: Response) => response.json());
+  }
   
   
   setAuthorized(_authorized) {

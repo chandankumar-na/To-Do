@@ -6,6 +6,7 @@ var ToDoDetailsSchema = new Schema({
                 decs:{type:String,default:""},
                 name:{type: String,default:""},
                 date:{type: Date},
+                time:{type:String,default:""},  
                 isDone:{type:Boolean,default:false},  
                 todo_link:{type: String,default:""},
                 todo_task:{type: String,default:""},

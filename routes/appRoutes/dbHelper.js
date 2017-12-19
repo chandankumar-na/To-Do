@@ -40,6 +40,20 @@ var self = module.exports = {
                 }
             });
     },
+
+    updateTime: function (req, callback) {
+        console.log(req.body)
+        ToDoDetailsSchema.findOneAndUpdate({ todo_id: req.body.todo_id },{ $set: { time: req.body.time } },
+            function (err, result) {
+                if (err) {
+                    return callback(err);
+                } else {
+                    console.log(result)
+                    return callback(result);
+                }
+            });
+    },
+
     fetchToDo: function (req, callback) {
         console.log(req.body)
         var query="";
@@ -78,6 +92,7 @@ var self = module.exports = {
             decs: req.body.decs,
             name: req.body.name,
             date:req.body.date,
+            time:req.body.time,
             todo_task:req.body.todo_task,
             todo_link:req.body.todo_link
         });

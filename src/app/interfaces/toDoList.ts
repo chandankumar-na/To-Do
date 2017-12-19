@@ -5,13 +5,15 @@ export class ToDoList {
     public decs?: string,
     public name?: string,
     public isDone?: boolean,
-    public date?: Date,
+    public date?: string,
     public todo_link?: string,
     public todo_task?: string,
     public delete_flag?: string,
+    public time?: string,
+    
 
   ) {
-
+    this.time = time;
     this.todo_link = todo_link
     this.todo_task = todo_task
     this.delete_flag = delete_flag;
