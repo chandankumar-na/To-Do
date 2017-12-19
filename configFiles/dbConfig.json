@@ -1,5 +1,5 @@
 {
     "url": {
-        "mongoDB": "mongodb://tododb:tododb@ds161426.mlab.com:61426/chandu"
+        "mongoDB": "mongodb://todo:todo@ds161426.mlab.com:61426/chandu"
     }
 }
